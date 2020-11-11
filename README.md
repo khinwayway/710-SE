@@ -1,5 +1,5 @@
 # 710-SE
-##NestScout Application: Your property, Our priority
+## NestScout Application: Your property, Our priority
 - Developed an application mainly using PHP, HTML, CSS, MySQL
 - NestScout will grant individuals access to an online property market
 - Users will be able to buy, sell, rent, or rent out their property without the need of agents
