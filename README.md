@@ -1,4 +1,4 @@
-# 710-SE
+# Team 710 - Software Engineering
 ## NestScout Application: Your property, Our priority
 - Developed an application mainly using PHP, HTML, CSS, MySQL
 - NestScout will grant individuals access to an online property market
