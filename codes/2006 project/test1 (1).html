@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+  <meta content="utf-8" http-equiv="encoding">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <title>test</title>
+ </head>
+ <body>
+
+  <header>
+     <h1>Search Property</h1>
+	  <form>
+	  <label for="query">Search:</label><br>
+	  <input type="text" id="input1" name="query"><br>
+
+	  </form>
+	   <button onclick="search(document.getElementById('input1').value)">Submit</button>
+	   <script>
+
+
+	   function search(query){
+		  var data = {
+			resource_id: '42ff9cfe-abe5-4b54-beda-c88f9bb438ee', // the resource id
+			q: query // search by input
+		    };
+		  $.ajax({
+			url: 'https://data.gov.sg/api/action/datastore_search',
+			data: data,
+			dataType: 'json',
+			success: function(data) {
+        console.log(data.result)
+        alert('Total results found: ' + data.result.total)
+        for (i = 0; i < data.result.total; i++) {
+          document.write(data.result.records[i].street_name  + "<br>")
+        }
+			}
+		  });
+		  }
+	   </script>
+  </header>
+
+ </body>
+ </html>

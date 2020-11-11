@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+  <meta content="utf-8" http-equiv="encoding">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <title>test</title>
+ </head>
+ <body onload="fetchTowns()">
+
+  <header>
+     <h1>Search Property</h1>
+	  <form>
+
+	  </form>
+	   <script>
+
+
+	   function fetchTowns(){
+       var townlist = [];
+       var count = 0;
+		  var data = {
+        limit: 5000,
+			  resource_id: '42ff9cfe-abe5-4b54-beda-c88f9bb438ee' // the resource id
+		    };
+		  $.ajax({
+			url: 'https://data.gov.sg/api/action/datastore_search',
+			data: data,
+			dataType: 'json',
+			success: function(data) {
+        console.log(data.result)
+        //alert('Total results found: ' + data.result.total)
+        for (i = 0; i < 5000; i++) {
+          if(townlist.includes(data.result.records[i].town)){
+
+            console.log("count");
+          }
+          else{
+            townlist[count] = data.result.records[i].town;
+            count++;
+          }
+        }
+        for (i = 0; i < townlist.length; i++) {
+          document.getElementById('typeExpand').innerHTML=townlist[i] + "<br>";
+        }
+			}
+		  });
+		  }
+	   </script>
+  </header>
+
+ </body>
+ </html>
