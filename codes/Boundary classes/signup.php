@@ -144,9 +144,6 @@ if (isset($_POST['signup'])) {
         if (document.getElementById("mobile").value == ""){
           alert("Please enter a mobile number.");
         }
-        else{
-          alert("You have successfully registered an account!");
-        }
           var username = document.getElementById("username").value;
           var email = document.getElementById('email').value;
           var password = document.getElementById("password").value;
