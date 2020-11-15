@@ -68,7 +68,7 @@ session_start();
           <a class="nav-link" href="#" id="saved">Saved</a>
         </li>
         <li class="nav-item m-3">
-            <a class="nav-link active" id="listing" name=listing href="#">Listings</a>
+            <a class="nav-link active" id="listing" name=listing href="../account/listing.php">Listings</a>
         </li>
         <li class="nav-item m-3">
           <a class="nav-link " href="#" id="appointments">Appointments</a>
