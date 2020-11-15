@@ -45,7 +45,6 @@ if (isset($_POST['signup'])) {
     <link rel="stylesheet" href="../src/stylesheet/nestscout.css">
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-
     <title>NestScout</title>
   </head>
   <body>
@@ -106,7 +105,7 @@ if (isset($_POST['signup'])) {
                 <br>
                 <div class="form-label-group">
                   <input type="email" id="email" class="form-control" placeholder="Email address" required autofocusvalue="<?php if($error) echo $email; ?>" class="form-control" />
-                  <span class="text-danger"><?php if (isset($email_error)) echo $email_error; ?></span>
+                  <span class="text-danger"><?php if (isset($email_error)) echo alert($email_error); ?></span>
                 </div>
                 <br>
                 <div class="form-label-group">
@@ -133,7 +132,21 @@ if (isset($_POST['signup'])) {
     </div>
     <script type="text/javascript">
       $('.reg').click(function() {
-        alert(document.getElementById("username").value+" successfully registered");
+        if (document.getElementById("username").value == ""){
+          alert("Please enter a username.");
+        }
+        if (document.getElementById("email").value == ""){
+          alert("Please enter an email.");
+        }
+        if (document.getElementById("password").value == ""){
+          alert("Please enter a password.");
+        }
+        if (document.getElementById("mobile").value == ""){
+          alert("Please enter a mobile number.");
+        }
+        else{
+          alert("You have successfully registered an account!");
+        }
           var username = document.getElementById("username").value;
           var email = document.getElementById('email').value;
           var password = document.getElementById("password").value;
@@ -148,6 +161,8 @@ if (isset($_POST['signup'])) {
               mobile : mobile},
               success: function(data){
                   console.log(data);
+                  window.location.href = "../account/login.php";
+
               }
           });
         });
