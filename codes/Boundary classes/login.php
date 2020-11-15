@@ -122,7 +122,7 @@ if (isset($_POST['Login'])) {
                 </div>
                 <input class="btn btn-lg btn-primary btn-block log" type="submit" name="Login" style="background-color:#ACD9E3;" value="Log In"></input>
                 <hr class="my-4">
-                <p style="font-weight:bold;">Don't have an account?<a href="signup.html" style="font-weight:600; color:#DBA97A;"> Sign up here.</a></p>
+                <p style="font-weight:bold;">Don't have an account?<a href="signup.php" style="font-weight:600; color:#DBA97A;"> Sign up here.</a></p>
               </form>
               <span class="text-danger"><?php if (isset($errormsg)) { echo $errormsg; } ?></span>
             </div>
